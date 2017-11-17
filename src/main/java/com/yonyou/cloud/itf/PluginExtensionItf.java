@@ -6,5 +6,7 @@ public interface PluginExtensionItf {
 	
 	public boolean run(ExtensionContext context);
 	
-	int order();
+	public int order();
+	
+	public String getPluginName();
 }

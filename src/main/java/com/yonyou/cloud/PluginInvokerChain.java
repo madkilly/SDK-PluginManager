@@ -9,8 +9,9 @@ public class PluginInvokerChain {
 	}
 	public void run(PluginExtensionItf[] plugins,ExtensionContext context) {
 		if (cursor < plugins.length) {
-			PluginExtensionItf itf = plugins[cursor++]; // 获取并将游标指向下一个Invoker
+			PluginExtensionItf itf = plugins[cursor++];
 			itf.run(context);
+			return;
 		}
 		throw new IllegalStateException("The cursor cross-border, cursor: " + cursor + ", invoker size: " + plugins.length);
 	
