@@ -31,7 +31,7 @@ public class PluginManager {
 		ServiceLoader<PluginExtensionItf> serviceLoader = ServiceLoader.load(PluginExtensionItf.class);
 		Iterator<PluginExtensionItf> it = serviceLoader.iterator();
 		List<PluginExtensionItf> list = new ArrayList<PluginExtensionItf>();
-		if (it.hasNext()) {
+		while (it.hasNext()) {
 
 			PluginExtensionItf itf = it.next();
 			list.add(itf);
