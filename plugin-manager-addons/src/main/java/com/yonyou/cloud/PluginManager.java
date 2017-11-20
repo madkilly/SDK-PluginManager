@@ -59,8 +59,8 @@ public class PluginManager {
 	}
 
 	public static void runPlugins(ExtensionContext context) {
-		StringBuilder sb = new StringBuilder();
 		if(logflag) {
+			StringBuilder sb = new StringBuilder();
 			logger.info("执行插件链条");
 			for(PluginExtensionItf itf:plugins){
 				sb.append(itf.getPluginName()).append(",");
