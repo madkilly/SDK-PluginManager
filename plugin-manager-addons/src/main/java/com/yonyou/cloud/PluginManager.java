@@ -59,8 +59,17 @@ public class PluginManager {
 	}
 
 	public static void runPlugins(ExtensionContext context) {
+		StringBuilder sb = new StringBuilder();
 		if(logflag) {
 			logger.info("执行插件链条");
+			for(PluginExtensionItf itf:plugins){
+				sb.append(itf.getPluginName()).append(",");
+			}
+			if(sb.length()>0){
+				sb.deleteCharAt(sb.length()-1);
+			}
+			
+			logger.info("链条执行顺序:"+sb.toString());
 		} 
 	    PluginInvokerChain chain = new PluginInvokerChain();
 		for (int i=0;i<plugins.length;i++) {
